@@ -1,18 +1,18 @@
 package application;
 
-public class Location {
+public class Vector3d {
 	
 	private double xPos;
 	private double yPos;
 	private double zPos;
 	
-	public Location(double x, double y) {
+	public Vector3d(double x, double y) {
 		xPos = x;
 		yPos = y;
 		zPos = 0;
 	}
 	
-	public Location(double x, double y, double z) {
+	public Vector3d(double x, double y, double z) {
 		xPos = x;
 		yPos = y;
 		zPos = z;
@@ -42,6 +42,12 @@ public class Location {
 		return zPos = z;
 	}
 	
+	public void set(Vector3d v) {
+		xPos = v.getX();
+		yPos = v.getY();
+		zPos = v.getZ();
+	}
+	
 	public double adjX(double x) {
 		return xPos += x;
 	}
@@ -52,5 +58,11 @@ public class Location {
 	
 	public double adjZ(double z) {
 		return zPos += z;
+	}
+	
+	public void adjust(Vector3d v) {
+		xPos += v.getX();
+		yPos += v.getY();
+		zPos += v.getZ();
 	}
 }
